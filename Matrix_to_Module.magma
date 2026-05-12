@@ -1,0 +1,18 @@
+G := CyclicGroup(4);
+Q := RationalField();
+
+// Suppose your ZG-module has generator acting by this 4x4 matrix
+M := Matrix(Q, 4, 4, [
+    0, 0, 0, -1,
+    1, 0, 0,  0,
+    0, 1, 0,  0,
+    0, 0, 1,  0
+]);
+
+V := GModule(G, [M]);
+
+summands := IndecomposableSummands(V);
+print "Number of indecomposable summands:", #summands;
+for i in [1..#summands] do
+    print "Summand", i, "- dimension:", Dimension(summands[i]);
+end for;
