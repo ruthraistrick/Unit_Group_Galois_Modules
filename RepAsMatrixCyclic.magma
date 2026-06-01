@@ -32,4 +32,6 @@ function RepAsMatrixCyclic(K,F) //turns the action of the generator into a matri
         correctcoords:= coords[2..4];
         return correctcoords;
     end function;
+    M := Transpose(Matrix(F, 3, 3, &cat[Vector(g) : g in gens]));
+    return M;
 end function;

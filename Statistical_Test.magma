@@ -4,7 +4,7 @@ CaseB := 0;
 n := //set n to be how many fields you want to test
 IntegralMatrices := [Matrix(Integers(),3,3, [[-1,0,0], [0,0,-1], [0,1,0]]),
                 Matrix(Integers(),3,3,[[0,-1,1],[1,0,0],[0,0,-1]])];
-for i in [1001..3000] do
+for i in [1..n] do 
     Gmod,Mat := C4UnitStructure(Fields[i]`field);
     if Mat eq IntegralMatrices[1] then
         CaseA := CaseA +1;
