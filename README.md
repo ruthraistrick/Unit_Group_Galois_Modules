@@ -2,18 +2,23 @@
 The code in this repository calculates the integral galois module structure of the free part of the unit group 
 of the ring of integers of a $C_4$ extension of $ℚ$. We briefly explain the algorithm as follows. Throughout let $\Gamma_K$ denote the free part of the unit group of the ring of integers of a number field $K$.
 \
-There exists two different cases, $C4$ number fields of signature $(0,2)$ and those of signature $(4,0)$. The first case is simple, Dirichlet's unit theorem gives us that $\Gamma_K$ is of rank 1. It follows that we have that $\text{Gal}(K/ℚ)$ acts trivially or by multiplication by $-1$ - we clearly have the latter since the former would imply that there existed a unit of infinite order in $ℚ$. 
+There exists two different cases, $C4$ number fields of signature $(0,2)$ and those of signature $(4,0)$. The first case is simple, Dirichlet's unit theorem gives us that $\Gamma_K$ is of rank 1. It follows that we have that $\text{Gal}(K/ℚ)$ acts trivially or by multiplication by $-1$ (that is, by sending a fundamental unit to its inverse) - we clearly have the latter since the former would imply that there existed a unit of infinite order in $ℚ$. 
 \
 Suppose now we are in the latter case. Again we use Dirichlet's unit theorem to give that $\Gamma_K$ is of rank $3$. Roiter's
-"On the representations of the cyclic group of fourth order by integral matrices." gives us that there are 2 irreducible integral $C4$ modules of rank 1, 2 of rank 2 and 2 of rank 3. They are as follows: 
+"On the representations of the cyclic group of fourth order by integral matrices." gives us that there are 2 irreducible integral $C4$ modules of rank 1, 2 of rank 2 and 2 of rank 3. They are as follows (here we represent the action of the generator of $C4$ as a matrix): 
 \
-\begin{equation}
-\begin{bmatrix} 1 \end{bmatrix}
-\end{equation}
+$`A := \begin{bmatrix} 1 \end{bmatrix}`$
 \
-$$\begin{bmatrix} -1 \end{bmatrix}$$
+$` B:= \begin{bmatrix} -1 \end{bmatrix}`$
 \
-$$\begin{bmatrix} 0 & -1 \\ 1 & 0 \end{bmatrix}$$
+$` C:=\begin{bmatrix} 0 & -1 \\ 1 & 0 \end{bmatrix}`$
+\
+$`D :=\begin{bmatrix} 1 & 1 \\ 0 & -1 \end{bmatrix}`$
+\
+$`E :=\begin{bmatrix} 0 & -1 & 1 \\ 1 & 0 & 0 \\ 0 & 0 & -1 \end{bmatrix}`$
+\
+$` F :=\begin{bmatrix} 1 & 1 & 0 \\ 0 & 0 & -1 \\ 0 & 1 & 0 \end{bmatrix}.`$
+Again we cannot have a non-trivial subspace fixed the galois action else we would have a unit of infinite order in $ℚ$. Excluding the matrices with eigenvalue $1$ we are left with $B$, $C$, and $E$. It follows that we either have $\Gamma_K$ isomorphic to three copies of $B$, $C \oplus B$ or $E$. However we see that three copies of $B$ is impossible. We are left with having to write an algorithm that tells apart $C \oplus B$ and $E$. Tensoring with the finite field of degree $2$ gives us two non-similar matrices. Our algorithm is therefore as follows: given $K$ we produce a matrix associated to the galois action on $\Gamma_K$ then ask which of the two matrices this is similar to after tensoring with $F_2$.  
 ## What's In Each File and How To Run The Code
 Files of the form `.magma` contain code written in the software package Magma: files of the form `.py` contain code written in Python. Please note that all code is originally written in Magma, the python code is simply a wrapper. 
   * The file `RepAsMatrixCyclic.magma` contains a function that inputs cyclic extension of $ℚ$,
