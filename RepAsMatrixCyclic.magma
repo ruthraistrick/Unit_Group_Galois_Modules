@@ -26,3 +26,10 @@ function RepAsMatrixCyclic(K,F) //turns the action of the generator into a matri
             break;
         end if;
     end for;
+    function Vector(g)
+        action := (OK ! (gen(g))) @@ Umap;
+        coords := ElementToSequence(action);
+        correctcoords:= coords[2..4];
+        return correctcoords;
+    end function;
+end function;
