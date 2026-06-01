@@ -1,0 +1,23 @@
+Fields := make_data();
+CaseA := 0;
+CaseB := 0;
+n := //set n to be how many fields you want to test
+IntegralMatrices := [Matrix(Integers(),3,3, [[-1,0,0], [0,0,-1], [0,1,0]]),
+                Matrix(Integers(),3,3,[[0,-1,1],[1,0,0],[0,0,-1]])];
+for i in [1001..3000] do
+    Gmod,Mat := C4UnitStructure(Fields[i]`field);
+    if Mat eq IntegralMatrices[1] then
+        CaseA := CaseA +1;
+    else
+        CaseB := CaseB +1;
+    end if;
+end for;
+
+CaseA/n;
+
+//Running over the first 1000 fields shows a strong bias towards 'Case A' i.e. the decomposbale 
+//representation - over the first 1000 fields we have 223/250 of them Case A
+
+    
+
+    
