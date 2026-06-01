@@ -1,0 +1,16 @@
+IrreducibleRepsAsMatrix := [* 
+    Matrix(IntegerRing(),1,1,[[1]]), 
+    Matrix(IntegerRing(),1,1,[[-1]]), 
+    Matrix(IntegerRing(),2,2,[[0,-1],[1,0]]), 
+    Matrix(IntegerRing(),2,2,[[1,1],[0,-1]]),
+    Matrix(IntegerRing(),3,3,[[0,-1,1],[1,0,0],[0,0,-1]]),
+    Matrix(IntegerRing(),3,3, [[1,1,0],[0,0,-1],[0,1,0]]),
+    Matrix(IntegerRing(),4,4, [[1,1,0,1],[0,0,-1,0],[0,1,0,0],[0,0,0,-1]]),
+    Matrix(IntegerRing(),4,4, [[1,2,0,0],[0,0,-1,1],[0,1,0,0],[0,0,0,-1]]),
+    Matrix(IntegerRing(),4,4, [[1,1,0,0],[0,0,-1,1],[0,1,0,0],[0,0,0,-1]])*];
+
+IrreducibleReps := [* GModule(CyclicGroup(4),[IrreducibleRepsAsMatrix[i]]) : i in [1..9] *];
+threedimreps := [ 
+    Matrix(IntegerRing(),3,3, [[-1,0,0], [0,0,-1], [0,1,0]]), 
+    Matrix(IntegerRing(),3,3,[[0,-1,1],[1,0,0],[0,0,-1]]),
+    Matrix(IntegerRing(),3,3, [[1,1,0],[0,0,-1],[0,1,0]])];
