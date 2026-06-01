@@ -1,7 +1,7 @@
 import subprocess
 import os
 
-HOST = "s2688857@compute64y.maths.ed.ac.uk"
+HOST = "EDIT THIS WITH YOUR HOST (e.g. s2688857@compute64y.maths.ed.ac.uk)"
 REPO = "Unit_Group_Galois_Modules"
 
 poly = "x^4 + x^3 + x^2 + x + 1"
