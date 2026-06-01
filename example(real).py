@@ -1,7 +1,7 @@
 import subprocess
 import os
 
-HOST = "s2688857@compute64y.maths.ed.ac.uk"
+HOST = "EDIT THIS WITH YOUR HOST (e.g. s2688857@compute64y.maths.ed.ac.uk)"
 REPO = "Unit_Group_Galois_Modules"
 
 poly = "x^4 - 4*x^2 + 2"
@@ -15,9 +15,7 @@ if not os.path.isdir(REPO):
         "clone",
         "https://github.com/ruthraistrick/Unit_Group_Galois_Modules"
     ], check=True)
-
-# -----------------------------
-# clean Magma script (NO escaping hell)
+    
 # -----------------------------
 magma_script = f"""
 cd {REPO}
