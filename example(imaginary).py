@@ -17,8 +17,7 @@ if not os.path.isdir(REPO):
     ], check=True)
 
 # -----------------------------
-# clean Magma script (NO escaping hell)
-# -----------------------------
+
 magma_script = f"""
 cd {REPO}
 
