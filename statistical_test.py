@@ -9,7 +9,7 @@ load "C4_extensions.magma";
 load "fields_magma.m";
 
 Fields := make_data();
-n := #Fields;
+n := 1000;
 
 CountA := 0;
 CountB := 0;
