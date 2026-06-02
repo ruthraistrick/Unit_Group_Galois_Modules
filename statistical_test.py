@@ -31,7 +31,7 @@ end for;
 
 print "CountA:", CountA;
 print "CountB:", CountB;
-print "Ratio:", RealField(20)!CountA/n;
+print "Ratio:", CountA/n;
 
 quit;
 """
