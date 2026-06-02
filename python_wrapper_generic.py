@@ -9,7 +9,7 @@ R<x> := PolynomialRing(Rationals());
 
 K<a> := NumberField({poly});
 
-load "Better_C4_extensions.magma";
+load "C4_extensions.magma";
 
 C4UnitStructure(K);
 
